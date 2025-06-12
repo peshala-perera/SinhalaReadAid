@@ -23,4 +23,4 @@ if text_input:
 
     st.subheader("🧠 POS Tags")
     pos_tags = pos_analysis(simplified)
-    st.write(pos_tags)
+    st.table(pos_tags)

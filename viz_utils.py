@@ -2,10 +2,16 @@ import matplotlib.pyplot as plt
 from collections import Counter
 import nltk
 
+nltk.download('punkt')
+
 def plot_word_freq(text):
-    words = nltk.word_tokenize(text)
+    # Direct word split — avoid sentence tokenizer entirely
+    words = text.split()
     counts = Counter(words)
     top_words = counts.most_common(10)
+
+    if not top_words:
+        return None
 
     labels, values = zip(*top_words)
 
